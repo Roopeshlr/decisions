@@ -1,0 +1,13 @@
+name: core_remote
+description: A new Flutter package project.
+version: 0.0.1
+author:
+homepage:
+
+environment:
+  sdk: ">=2.6.0 <3.0.0"
+
+dependencies:
+  chopper: ^3.0.1+1
+
+dev_dependencies:

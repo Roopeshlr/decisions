@@ -1,0 +1,13 @@
+name: core_ui
+description: Core files related to UI
+version: 0.0.1
+author:
+homepage:
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  rxdart: ^0.23.1

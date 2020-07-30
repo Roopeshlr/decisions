@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/inn_data/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/inn_data/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/inn_data/build" />
+      <excludeFolder url="file://$MODULE_DIR$/inn_data/data/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/inn_data/data/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/inn_data/data/build" />
+      <excludeFolder url="file://$MODULE_DIR$/inn_data/entities/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/inn_data/entities/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/inn_data/entities/build" />
+      <excludeFolder url="file://$MODULE_DIR$/inn_data/mock_data/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/inn_data/mock_data/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/inn_data/mock_data/build" />
+      <excludeFolder url="file://$MODULE_DIR$/inn_data/remote_api/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/inn_data/remote_api/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/inn_data/remote_api/build" />
+      <excludeFolder url="file://$MODULE_DIR$/inn_data/ui/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/inn_data/ui/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/inn_data/ui/build" />
+      <excludeFolder url="file://$MODULE_DIR$/inn_data/use_case/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/inn_data/use_case/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/inn_data/use_case/build" />
+      <excludeFolder url="file://$MODULE_DIR$/inn_data_core/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/inn_data_core/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/inn_data_core/build" />
+      <excludeFolder url="file://$MODULE_DIR$/inn_data_core/core_entities/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/inn_data_core/core_entities/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/inn_data_core/core_entities/build" />
+      <excludeFolder url="file://$MODULE_DIR$/inn_data_core/core_remote/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/inn_data_core/core_remote/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/inn_data_core/core_remote/build" />
+      <excludeFolder url="file://$MODULE_DIR$/inn_data_core/core_ui/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/inn_data_core/core_ui/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/inn_data_core/core_ui/build" />
+      <excludeFolder url="file://$MODULE_DIR$/inn_data_core/core_usecase/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/inn_data_core/core_usecase/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/inn_data_core/core_usecase/build" />
+      <excludeFolder url="file://$MODULE_DIR$/inn_data_core/lib/core_entities/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/inn_data_core/lib/core_entities/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/inn_data_core/lib/core_entities/build" />
+      <excludeFolder url="file://$MODULE_DIR$/inn_data_core/lib/core_remote/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/inn_data_core/lib/core_remote/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/inn_data_core/lib/core_remote/build" />
+      <excludeFolder url="file://$MODULE_DIR$/inn_data_core/lib/core_ui/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/inn_data_core/lib/core_ui/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/inn_data_core/lib/core_ui/build" />
+      <excludeFolder url="file://$MODULE_DIR$/inn_data_core/lib/core_usecase/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/inn_data_core/lib/core_usecase/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/inn_data_core/lib/core_usecase/build" />
+      <excludeFolder url="file://$MODULE_DIR$/inn_data_widgets/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/inn_data_widgets/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/inn_data_widgets/build" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Dart SDK" level="project" />
+    <orderEntry type="library" name="Dart Packages" level="project" />
+  </component>
+</module>
