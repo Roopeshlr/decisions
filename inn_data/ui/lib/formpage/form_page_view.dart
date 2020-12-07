@@ -2,8 +2,11 @@ import 'package:core_ui/base_view.dart';
 import 'package:core_ui/base_view_out_state.dart';
 import 'package:core_ui/base_view_state.dart';
 import 'package:entities/dummy/dummy_form_data.dart';
+import 'package:entities/meeting_list_entity.dart';
 import 'package:flutter/material.dart';
+import 'package:ui/factory/view_model/inn_data_view_factory.dart';
 import 'package:ui/formpage/form_page.dart';
+import 'package:ui/homepage/my_home_page_view.dart';
 import 'package:use_case/get_for_data_use_case.dart';
 import 'package:rxdart/rxdart.dart';
 import 'widgets/custom_check_box.dart';
@@ -14,67 +17,12 @@ class FormPageView extends BaseView<FormPageViewState, FormPageViewOutState> {
 
   FormPageView(this._getDataUseCase);
 
-  BehaviorSubject<bool> checkboxValue = BehaviorSubject();
-  BehaviorSubject<bool> mandatoryValue = BehaviorSubject();
+  DateTime date;
+  DateTime remainderDate;
+  TimeOfDay remainderTime;
+  TimeOfDay time;
 
-
-  Widget widgetSwitcher(DummyFormData data) {
-    switch(data.type){
-      case "text":
-        return TextFormField(
-          decoration: new InputDecoration(
-            labelText: data.caption !=null?data.caption:"",
-            fillColor: Colors.white,
-            border: new OutlineInputBorder(
-              borderRadius: new BorderRadius.circular(25.0),
-              borderSide: new BorderSide(
-              ),
-            ),
-            //fillColor: Colors.green
-          ),
-          validator: data.mandatory?(value){
-            if(value==null || value=="") {
-              return data.validationMessage;
-            }else{
-              return null;
-            }
-          }:null,
-        );
-      case "int":
-        return TextFormField(
-          initialValue: data.defaultValue,
-          decoration: new InputDecoration(
-            labelText: data.caption !=null?data.caption:"",
-            fillColor: Colors.white,
-            border: new OutlineInputBorder(
-              borderRadius: new BorderRadius.circular(25.0),
-              borderSide: new BorderSide(
-              ),
-            ),
-            //fillColor: Colors.green
-          ),
-          keyboardType: TextInputType.number,
-          validator: data.mandatory?(value){
-            if(value==null || value=="") {
-              return data.validationMessage;
-            }else{
-              return null;
-            }
-          }:null,
-        );
-      case "bool":
-        _addMandatoryToState(data.mandatory);
-        _addDefaultValueToState(data.defaultValue);
-        return CheckBox(title: data.caption,validationMessage: data.validationMessage,defaultValue: data.defaultValue,onClicked: (val){
-          print(val);
-          checkboxValue.add(val);
-        },);
-        break;
-      default:
-        return Container();
-    }
-
-  }
+  final MyHomePageView _homePageView = ViewFactory().get<MyHomePageView>();
 
   @override
   initializeOutState() {
@@ -88,42 +36,97 @@ class FormPageView extends BaseView<FormPageViewState, FormPageViewOutState> {
 
 
 
-
-  Future<List<DummyFormData>> getFormData(baseUrl) async {
-    return await _getDataUseCase.execute(baseUrl).then((value){
-      return value;
-    });
-  }
   showSuccessPopUp(context) {
-      if(checkboxValue.value || !mandatoryValue.value){
-        final _snackBar = SnackBar(content: Text("Form Submitted"));
-        Scaffold.of(context).showSnackBar(_snackBar);
-      }else{
-        final _snackBar = SnackBar(content: Text("Please Check the CheckBox "));
-        Scaffold.of(context).showSnackBar(_snackBar);
-      }
+
+    state.dateTime = DateTime(date.year,date.month,date.day,time.hour,time.minute);
+     DateTime RemainderTime  = DateTime(remainderDate.year,remainderDate.month,remainderDate.day,
+        remainderTime.hour,remainderTime.minute);
+
+
+    _homePageView.meet.add(
+      MeetingListEntity(
+          dateTime: state.dateTime,
+          description: state.description,
+          meetingRoom:state.meetingRoom,
+          meetingTime: int.parse(state.meetingDuration)  ,
+          priority: "High",
+          reminder: RemainderTime,
+          title: state.title),
+    );
+
+    _homePageView.changeSelectedDate(0);
+
+    Navigator.pop(context);
+
+
   }
 
-   _addDefaultValueToState(String data) {
-    print(data);
 
-    if(data=="False"){
-      checkboxValue.add(false);
+
+
+
+  selectTime(context)async{
+    time = await showTimePicker(context: context, initialTime:  TimeOfDay.now());
+  }
+
+  selectDate(context) async {
+    date = await showDatePicker(context:context , initialDate: DateTime.now(),
+        firstDate:  DateTime.now(), lastDate: DateTime(2025));
+  }
+
+  void onSavedTitle(String value) {
+if(value!=null){
+  state.title = value;
+}else{
+  state.title = "no title";
+}
+
+
+  }
+
+  void onSavedDescription(String value) {
+    if(value!=null){
+      state.description = value;
     }else{
-      checkboxValue.add(true);
+      state.description = "no description";
     }
   }
 
-  void _addMandatoryToState(bool mandatory) {
-    print("mandatory $mandatory");
-    mandatoryValue.add(mandatory);
+  void onSavedDuration(String value) {
+    if(value!=null){
+      state.meetingDuration = value;
+    }else{
+      state.meetingDuration = "30";
+    }
+
+  }
+
+  void onSelectMeeetingRoom(MeetingRoom value) {
+    if(value!=null){
+      state.meetingRoom = value;
+    }else{
+      state.meetingRoom = MeetingRoom.BLUE;
+    }
+  }
+
+  selectRemainderTime(context) async {
+     remainderDate = await showDatePicker(context:context , initialDate: DateTime.now(),
+        firstDate:  DateTime.now(), lastDate: DateTime(2025)).then((value) async {
+          remainderTime = await showTimePicker(context: context, initialTime:  TimeOfDay.now());
+          return value;
+     });
   }
 
 
 }
 
 class FormPageViewState extends BaseViewState {
-  
+  String title;
+  String description;
+  String meetingDuration;
+  MeetingRoom meetingRoom;
+  DateTime dateTime;
+  DateTime remainderTime;
 }
 
 class FormPageViewOutState extends BaseViewOutState {}

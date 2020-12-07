@@ -9,13 +9,10 @@ import 'package:ui/formpage/form_page.dart';
 Future<void> main() async {
   print('INIT MAIN');
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(DevicePreview(
-    usePreferences: true,
-      enabled: false,
-      builder: (context) => MaterialApp(
+  runApp( MaterialApp(
         builder: DevicePreview.appBuilder,
             home: InnDataApp(),
-          )));
+         ));
   InnDataModule();
   await ViewFactory().initialise();
 }

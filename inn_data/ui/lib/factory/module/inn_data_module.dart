@@ -5,7 +5,6 @@ import 'package:mock_data/mock_order_repo.dart';
 import 'package:ui/factory/module/order_booking_module.dart';
 
 class InnDataModule {
-//  static Alice alice;
   static bool enableOnScreenCrash = kReleaseMode ? false : true;
   static InnDataModule _instance;
   OrderRepo _orderRepoInstance;
@@ -19,7 +18,7 @@ class InnDataModule {
 
   InnDataModule._default();
 
-  bool enableMock =false;
+  bool enableMock = false;
 
   Map<String, dynamic> _deviceConfig;
 
