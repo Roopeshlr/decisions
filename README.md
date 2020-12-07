@@ -57,19 +57,6 @@ Main and Core
  
 
 
-## Demo Video
-
-
-```python
-https://drive.google.com/file/d/1lwevRbN5Oh9zE0xMgfHjPTiwD5XFWwfy/view?usp=sharing
-```
-
-## Apk Links 
-
-Release Build :  [MockData](https://drive.google.com/file/d/1GkS_JZvqEnxYKe1xzO7astn9EonMpA0G/view?usp=sharing) || [Release Build](https://drive.google.com/file/d/1FFzyCtZtECvCYMXmDYwUJ2JL6eIJHBnY/view?usp=sharing)
-
-Device Preview Build :  [Release Build](https://drive.google.com/file/d/1qlBXnYznyDiVkzKSfjTIuZSDrJyuNxVO/view?usp=sharing)  (Note: Use only if you want to see Device Preview)
-
 
 
  
